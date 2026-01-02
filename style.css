@@ -86,7 +86,7 @@ body {
 .content {
     position: relative;
     z-index: 10;
-    width: auto%;
+    width: auto;
     margin-left: 10%;
     margin-right: 10%;
     display: flex;
