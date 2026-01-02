@@ -96,8 +96,8 @@ body {
 
 .heart-container {
     position: relative;
-    width: 700px;
-    height: 700px;
+    width: 80vh;
+    height: 80vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -106,8 +106,8 @@ body {
 
 .heart {
     background-color: var(--heart-color);
-    width: 450px;
-    height: 450px;
+    width: 53vh;
+    height: 53vh;
     position: relative;
     transform: rotate(-45deg);
     display: flex;
@@ -121,19 +121,19 @@ body {
     content: "";
     background-color: var(--heart-color);
     border-radius: 50%;
-    width: 450px;
-    height: 450px;
+    width: 53vh;
+    height: 53vh;
     position: absolute;
 }
 
 .heart::before {
-    top: -225px;
+    top: -26.5vh;
     left: 0;
 }
 
 .heart::after {
     top: 0;
-    left: 225px;
+    left: 26.5vh;
 }
 
 .message {
@@ -144,10 +144,10 @@ body {
     /* Counteract the heart rotation */
     text-align: center;
     z-index: 20;
-    width: 350px;
+    width: 45vh;
     font-family: 'Dancing Script', cursive;
     font-weight: 900;
-    font-size: 4.5rem;
+    font-size: 8vh;
     line-height: 1.1;
     display: flex;
     flex-direction: column;
@@ -177,11 +177,11 @@ body {
 
 .bottom-message {
     position: fixed;
-    bottom: 50px;
+    bottom: 2vh;
     left: 10%;
     width: 80%;
     text-align: center;
-    font-size: 3rem;
+    font-size: 3.5vh;
     font-weight: 700;
     font-style: italic;
     z-index: 20;
@@ -199,7 +199,9 @@ body {
     font-style: normal;
 }
 
-.bottom-message p.date {
+.bottom-message p.date,
+.bottom-message span.date {
+    display: inline-block;
     font-weight: 700;
     font-style: normal;
     color: #ff3366;
