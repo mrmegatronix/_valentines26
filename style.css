@@ -178,10 +178,9 @@ body {
 .bottom-message {
     position: fixed;
     bottom: 2vh;
-    left: 10%;
-    width: 90%;
+    width: fit-content;
     text-align: center;
-    font-size: 3.5vh;
+    font-size: 5vh;
     font-weight: 700;
     font-style: italic;
     z-index: 20;
