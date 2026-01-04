@@ -183,9 +183,9 @@ body {
     bottom: 4vh;
     width: 100%;
     text-align: center;
-    font-size: 7vh;
+    font-size: 6vh;
     font-weight: 800;
-    font-style: italic;
+    font-style: normal;
     z-index: 20;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8), 0 0 20px var(--neon-purple);
     font-family: 'Outfit', sans-serif;
@@ -195,7 +195,7 @@ body {
 }
 
 .bottom-message p {
-    margin: 8px 0;
+    margin: 5px 0;
 }
 
 .bottom-message .plain {
