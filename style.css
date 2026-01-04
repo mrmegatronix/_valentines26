@@ -181,7 +181,7 @@ body {
 .bottom-message {
     position: fixed;
     bottom: 4vh;
-    width: 100%;
+    width: fit-content;
     text-align: center;
     font-size: 6vh;
     font-weight: 800;
