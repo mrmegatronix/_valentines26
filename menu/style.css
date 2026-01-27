@@ -10,7 +10,7 @@
 body {
   margin: 0;
   padding: 0;
-  width: 100%;
+  width: 100vw;
   height: 100vh;
   background: radial-gradient(
     circle at center,
@@ -19,9 +19,7 @@ body {
   );
   font-family: "Outfit", sans-serif;
   overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  position: relative;
   color: var(--text-color);
   font-size: 16px;
 }
@@ -88,14 +86,17 @@ body {
 }
 
 .content {
-  position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
   z-index: 10;
-  width: auto;
-  margin-left: 10%;
-  margin-right: 10%;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 0;
+  overflow: hidden;
 }
 
 .heart-container {
@@ -150,39 +151,50 @@ body {
   transform: translate(-50%, -50%);
   text-align: center;
   z-index: 20;
-  transition: opacity 1s ease-in-out;
-  width: 80vw;
-  max-width: 90vh; /* Keep it contained somewhat */
-
-  /* Font Styles matching index.html */
+  transition: opacity 1s ease-in-out, font-size 0.3s ease;
+  width: 95vw;
+  max-height: 85vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   font-family: 'Dancing Script', cursive;
   font-weight: 1000;
-  font-size: 10vh; /* Default Large for Msg 1 */
+  font-size: inherit; /* Allow JS/inheritance to control size */
   line-height: 1.1;
-  text-shadow: 0.5px 0 0 #000, -0.5px 0 0 #000, 0 0.5px 0 #000, 0 -0.5px 0 #000;
-  color: #000000;
+  color: #ffffff;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.8), 0 0 10px rgba(0,0,0,0.5);
+  overflow: visible;
 }
 
 .message.compact {
-    font-size: clamp(2rem, 4vw, 4em); /* Responsive, max 4em */
-    line-height: 1.4;
-    width: 90vw; /* Use more width for menus */
+    /* Font size still inherited from parent, but layout properties stay */
+    line-height: 1.1;
+    width: 95vw;
 }
 
 .bottom-message {
-    /* ... existing props ... */
-    transition: opacity 1s ease-in-out;
-    opacity: 1;
+  position: fixed;
+  bottom: 50px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  z-index: 100;
+  transition: opacity 1s ease-in-out;
+  opacity: 1;
+}
+
+.bottom-message p {
+    margin: 5px 0;
+    font-size: clamp(1rem, 2vh, 1.5rem);
 }
 
 .bottom-message.hidden {
-    opacity: 0;
+  display: none !important;
+  opacity: 0;
+  pointer-events: none;
 }
 
-/* Enlarged Heart State (Full Screenish with 5% margins) */
-.heart-container.enlarged {
-   /* The container size guides the heart. 
-      We want the heart to be as big as possible within 5% margins. 
 /* Enlarged Heart State (Full Screen Transition) */
 .heart-container.enlarged .heart {
     transform: rotate(-45deg) scale(6); /* Massive scale to cover screen */
@@ -246,15 +258,30 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    height: 50px; /* Trigger area */
+    height: 80px; /* Larger trigger area */
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 20px;
     z-index: 200;
     opacity: 0;
-    transition: opacity 0.3s;
-    background: rgba(0,0,0,0.5); /* Semi-transparent bg when visible */
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+    background: rgba(0,0,0,0.5);
+}
+
+.controls:hover {
+    opacity: 1;
+    visibility: visible;
+}
+
+.white-text, .white-text p, .white-text .word {
+    color: #ffffff !important;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.9), 0 0 15px rgba(0,0,0,0.7) !important;
+}
+
+.hidden-heart {
+    display: none !important;
 }
 
 .controls:hover {
@@ -275,4 +302,6 @@ body {
 /* Ensure Progress Bar is top-most visible */
 .progress-container {
     z-index: 9999 !important; /* Force on top */
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Visibility fix */
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
 }

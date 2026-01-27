@@ -47,74 +47,87 @@ const messagesConfig = [
         <p>Your table for</p>
         <p>Two?</p>
         `,
-        color: '#ff3366', // Default
+        textColor: '#ffffff',
+        fontSize: '12vh', // Boosted from 8vh
+        color: '#ff3366', // Default Heart Color
         enlarged: false,
-        compact: false, // Large text
+        compact: false, // Normal text
         hideFooter: false,
-        duration: 20000 // 20s default
+        duration: 120000 // 2 minutes
     },
     {
         // Msg 2: Starter (Index 1)
         text: `
-        <p style="font-size: 1.5em; margin-bottom: 0.5em;">Valentine's Day Set Menu</p>
-        <p style="font-size: 1.3em; text-decoration: underline;">Starter</p>
+        <p style="margin-bottom: 0.5em;">Valentine's Day Set Menu</p>
+        <p style="text-decoration: underline;">Starter</p>
         <br>
         <p>SHARING PLATE:</p>
         <p>Crumbed Camembert w. Plum Sauce,</p>
         <p>Chicken Poppers w. Sriracha Aioli</p>
-        <p>& Cauli-bites w. Hot Honey</p>
+        <p>& Cauli-bites w. Hot Honey.</p>
         `,
+        textColor: '#ffffff',
+        fontSize: '8vh', // Switched to vh for better TV scaling
         color: 'rgba(255, 0, 0, 0.5)', // Red 50%
         enlarged: true,
         compact: true,
         hideFooter: true,
-        duration: 20000
+        duration: 30000 // 30s
     },
     {
         // Msg 3: Main (Index 2)
         text: `
-        <p style="font-size: 1.3em; text-decoration: underline;">Main Course</p>
-        <p style="font-size: 0.8em; margin-bottom: 0.5em;">Select One Each</p>
-        <p>· Sirloin Medium Rare w.</p>
-        <p>Veg & Red Wine Jus</p>
-        <p>· Ooh La La Chicken w.</p>
-        <p>Pumpkin Mash & Greens</p>
-        <p>· Salmon w. Veg, Salad</p>
-        <p>& Lemon Mustard Sauce</p>
-        <p>· Pumpkin, Spinach, Feta</p>
-        <p>Filo Parcel w. Salad</p>
+        <p style="text-decoration: underline;">Main Course</p>
+        <p style="margin-bottom: 0.5em;">Select One Each</p>
+        <p>· Sirloin Medium Rare w. Veg & Red Wine Jus.</p>
+        <p>· Ooh La La Chicken w. Pumpkin Mash & Greens.</p>
+        <p>· Salmon w. Veg, Salad & Lemon Mustard Sauce.</p>
+        <p>· Pumpkin, Spinach, Feta Filo Parcel w. Salad.</p>
         `,
+        textColor: '#ffffff',
+        fontSize: '6vh', // Switched to vh for better TV scaling
         color: 'rgba(170, 0, 255, 0.5)', // Purple 50%
         enlarged: true,
         compact: true,
         hideFooter: true,
-        duration: 20000
+        duration: 30000 // 30s
     },
     {
         // Msg 4: Dessert (Index 3)
         text: `
-        <p style="font-size: 1.5em; text-decoration: underline;">Desserts</p>
+        <p style="text-decoration: underline;">Desserts</p>
         <br>
-        <p>Sharing Dessert:</p>
-        <p>Chocolate Cheesecake,</p>
-        <p>Apple Shortcake,</p>
-        <p>Berries, Cream</p>
-        <p>and Berry Sorbet</p>
+        <p>Shared Plate:</p>
+        <p>Chocolate Cheesecake, Apple Shortcake,</p>
+        <p>Berries, Cream & Berry Sorbet.</p>
         `,
+        textColor: '#ffffff',
+        fontSize: '8vh', // Switched to vh for better TV scaling
         color: 'rgba(0, 102, 255, 0.5)', // Blue 50%
         enlarged: true,
         compact: true,
         hideFooter: true,
-        duration: 20000
+        duration: 30000 // 30s
     },
     {
-        // Msg 5: Poems (Index 4)
+        // Msg 5a: Poem Part 1 (Index 4)
         text: `
         <p>Valentine's Day</p>
         <p>Set Menu</p>
-        <p>Our</p>
-        <p>Special Menu</p>
+        <p>Our Special Menu</p>
         <p>Just for Two</p>
+        `,
+        textColor: '#ffffff',
+        fontSize: '10vh',
+        color: 'rgba(255, 20, 147, 0.5)', // Deep Pink 50%
+        enlarged: true,
+        compact: true,
+        hideFooter: true,
+        duration: 30000 // 30s
+    },
+    {
+        // Msg 5b: Poem Part 2 (Index 5)
+        text: `
         <p>Yes You!</p>
         <p>You and Boo</p>
         <p>Should Come Too,</p>
@@ -122,35 +135,30 @@ const messagesConfig = [
         <p>For Your Table</p>
         <p>of Two!</p>
         `,
+        textColor: '#ffffff',
+        fontSize: '10vh',
         color: 'rgba(255, 20, 147, 0.5)', // Deep Pink 50%
         enlarged: true,
         compact: true,
         hideFooter: true,
-        duration: 20000
+        duration: 30000 // 30s
     },
     {
-        // Msg 6: Contact & QR (Index 5)
+        // Msg 6: Contact & QR (Index 6)
         text: `
-        <p>Ring us on:</p>
-        <p>Three Five Two</p>
-        <p>Oh One Oh Two</p>
-        <p>Ask for</p>
-        <p>A Table of Two...</p>
-        <p>And we'll see you soon!</p>
-        <p>Because....</p>
-        <p>It's Only</p>
-        <p>$90 FOR TWO</p>
-        <br>
-        <div id="qr-placeholder" style="margin-top: 10px;">
-           <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https%3A%2F%2Fbookings.nowbookit.com%2F%3Faccountid%3Dd7034cd3-cfde-4556-a98c-ea943ec35ef4%26venueid%3D13703%26theme%3Ddark%26colors%3Dhex%2Cff2d6f%26date%3D2026-02-14%26serviceids%3Devent" alt="Scan to Book" style="border: 2px solid white; border-radius: 10px;">
-           <p style="font-size: 0.5em; margin-top: 5px;">Scan to Book</p>
+        <p>Ring us: 352 0102</p>
+        <p>It's Only $90 FOR TWO</p>
+        <div id="qr-placeholder" style="margin-top: 1vh; display: flex; flex-direction: column; align-items: center;">
+           <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https%3A%2F%2Fbookings.nowbookit.com%2F%3Faccountid%3Dd7034cd3-cfde-4556-a98c-ea943ec35ef4%26venueid%3D13703%26theme%3Ddark%26colors%3Dhex%2Cff2d6f%26date%3D2026-02-14%26serviceids%3Devent" alt="Scan to Book" style="border: 2px solid white; border-radius: 10px; width: 35vh; height: 35vh;">
         </div>
         `,
+        textColor: '#ffffff',
+        fontSize: '8vh', 
         color: '#ff3366', // Default
         enlarged: false, 
         compact: true, 
         hideFooter: false,
-        duration: 120000 // 2 minutes
+        duration: 240000 // 4 minutes
     }
 ];
 
@@ -158,6 +166,7 @@ let currentMessageIndex = 0;
 const messageContainer = document.querySelector('.message');
 const progressBar = document.querySelector('.progress-bar');
 const heartContainer = document.querySelector('.heart-container');
+const heartShape = document.querySelector('.heart');
 const root = document.documentElement;
 const bottomMessage = document.querySelector('.bottom-message');
 
@@ -199,6 +208,42 @@ function wrapWords(htmlString) {
     return tempDiv.innerHTML;
 }
 
+function adjustFontSize(element, startSize) {
+    // Force the start size
+    element.style.fontSize = startSize;
+    
+    // Use a small timeout to let the browser compute the layout
+    setTimeout(() => {
+        let size = parseFloat(startSize);
+        let unit = startSize.replace(/[0-9.]/g, '');
+        let attempts = 0;
+        
+        // Define limits - use viewport as fallback if element is weird
+        const maxH = element.clientHeight || window.innerHeight * 0.7;
+        const maxW = element.clientWidth || window.innerWidth * 0.95;
+
+        // Ensure we don't shrink too much. Minimum font size for TV
+        const minSize = unit === 'vh' ? 5 : 4; // 5vh or 4rem/em floor for "Massive" requirement
+
+        while (attempts < 40) {
+            const currentH = element.scrollHeight;
+            const currentW = element.scrollWidth;
+            
+            if (currentH <= maxH && currentW <= maxW) break;
+            
+            size *= 0.95;
+            if (size < minSize) {
+                size = minSize;
+                element.style.fontSize = size + unit;
+                break;
+            }
+            
+            element.style.fontSize = size + unit;
+            attempts++;
+        }
+    }, 100);
+}
+
 function displayMessage(index) {
     // Clear existing timeout to prevent overlap
     if (cycleTimeout) clearTimeout(cycleTimeout);
@@ -223,8 +268,7 @@ function displayMessage(index) {
         heartContainer.classList.remove('enlarged');
     }
 
-    // Toggle Text Size
-    // If text is empty, ensure container is cleared
+    // Toggle Text Size / Compact Class
     if (config.compact) {
         messageContainer.classList.add('compact');
     } else {
@@ -232,10 +276,22 @@ function displayMessage(index) {
     }
 
     // Toggle Footer Visibility
-    if (config.hideFooter) {
+    // User requested Footer ONLY on Msg 1 and Last (Msg 7)
+    const isFirstOrLast = (index === 0 || index === messagesConfig.length - 1);
+    if (!isFirstOrLast) {
         bottomMessage.classList.add('hidden');
     } else {
         bottomMessage.classList.remove('hidden');
+    }
+
+    // Apply specific Font Styling
+    messageContainer.style.color = config.textColor || '';
+    
+    // Toggle White Text Class (Legacy, config.textColor takes precedence now but good for shadow)
+    if (config.textColor === '#ffffff') {
+        messageContainer.classList.add('white-text');
+    } else {
+        messageContainer.classList.remove('white-text');
     }
 
     // Prepare message
@@ -246,8 +302,26 @@ function displayMessage(index) {
     words.forEach((word, i) => {
         setTimeout(() => {
             word.classList.add('visible');
-        }, i * 600); 
+            word.style.opacity = '1';
+            word.style.color = '#ffffff';
+        }, i * 300); // Faster reveal for readability
     });
+
+    // Adjust font size to prevent clipping
+    // Wait a bit for the rendering to stabilize
+    setTimeout(() => {
+        adjustFontSize(messageContainer, config.fontSize || '8vh');
+    }, 50);
+
+    // Heart Visibility Logic:
+    // Visible on First (Index 0) and Last (Index length-1)
+    // Hidden on everything in between (Msg 2-6)
+    const lastIndex = messagesConfig.length - 1;
+    if (index === 0 || index === lastIndex) {
+        heartContainer.classList.remove('hidden-heart');
+    } else {
+        heartContainer.classList.add('hidden-heart');
+    }
 
     // Schedule next message
     cycleTimeout = setTimeout(nextMessage, duration);
@@ -265,3 +339,4 @@ function prevMessage() {
 
 // Initial Call
 displayMessage(currentMessageIndex);
+
