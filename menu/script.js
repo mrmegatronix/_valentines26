@@ -58,7 +58,7 @@ const messagesConfig = [
     {
         // Msg 2: Starter (Index 1)
         text: `
-        <p style="margin-bottom: 0.5em;">Valentine's Day Set Menu</p>
+        <p style="margin-bottom: 3em;">Valentine's Day Set Menu</p>
         <p style="text-decoration: underline;">Starter</p>
         <br>
         <p>SHARING PLATE:</p>
@@ -77,7 +77,10 @@ const messagesConfig = [
     {
         // Msg 3: Main (Index 2)
         text: `
-        <p style="text-decoration: underline;">Main Course</p>
+        <p style="margin-bottom: 3rem;">Valentine's Day Set Menu</p>
+        <p style="text-decoration: underline;">MAINS</p>
+        <br>
+        <p style="text-decoration: underline;"></p>
         <p style="margin-bottom: 0.5em;">Select One Each</p>
         <p>· Sirloin Medium Rare w. Veg & Red Wine Jus.</p>
         <p>· Ooh La La Chicken w. Pumpkin Mash & Greens.</p>
@@ -85,7 +88,7 @@ const messagesConfig = [
         <p>· Pumpkin, Spinach, Feta Filo Parcel w. Salad.</p>
         `,
         textColor: '#ffffff',
-        fontSize: '6vh', // Switched to vh for better TV scaling
+        fontSize: '8vh', // Switched to vh for better TV scaling
         color: 'rgba(170, 0, 255, 0.5)', // Purple 50%
         enlarged: true,
         compact: true,
@@ -95,6 +98,9 @@ const messagesConfig = [
     {
         // Msg 4: Dessert (Index 3)
         text: `
+        <p style="margin-bottom: 3rem;">Valentine's Day Set Menu</p>
+        <p style="text-decoration: underline;">DESSERT: </p>
+        <br></br>
         <p style="text-decoration: underline;">Desserts</p>
         <br>
         <p>Shared Plate:</p>
@@ -146,8 +152,9 @@ const messagesConfig = [
     {
         // Msg 6: Contact & QR (Index 6)
         text: `
-        <p>Ring us: 352 0102</p>
-        <p>It's Only $90 FOR TWO</p>
+        <p>Ring us: 352 0210</p>
+        <p>It's Only...</p>
+        <p>$90 FOR TWO</p>
         <div id="qr-placeholder" style="margin-top: 1vh; display: flex; flex-direction: column; align-items: center;">
            <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https%3A%2F%2Fbookings.nowbookit.com%2F%3Faccountid%3Dd7034cd3-cfde-4556-a98c-ea943ec35ef4%26venueid%3D13703%26theme%3Ddark%26colors%3Dhex%2Cff2d6f%26date%3D2026-02-14%26serviceids%3Devent" alt="Scan to Book" style="border: 2px solid white; border-radius: 10px; width: 35vh; height: 35vh;">
         </div>
